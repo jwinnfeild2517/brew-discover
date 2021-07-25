@@ -1,0 +1,68 @@
+.filter {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+  align-self: flex-start;
+}
+
+.filter label {
+  margin-right: 1em;
+}
+
+
+#dropdown {
+  width: 100px;
+  height: 39px;
+  background: transparent;
+  color: white;
+  border: 2px solid #E9BCB7;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+
+
+#dropdown:hover {
+  cursor: pointer;
+  background-color: #E9BCB7;
+  color: black;
+}
+
+.featured-brew-container {
+  background-color: #C5AFA0;
+  width: 100%;
+  padding: 1em;
+  position: relative;
+  margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.featured-brew-container h4 {
+  margin: 1em;
+}
+
+.featured-brew-info {
+  position: static;
+  padding: .6em;
+  font-size: 12px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .featured-brew-container {
+    max-width: 700px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .featured-brew-container {
+    max-width: 1100px;
+  }
+}

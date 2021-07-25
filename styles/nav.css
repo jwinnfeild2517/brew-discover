@@ -1,0 +1,15 @@
+.nav {
+  margin: auto;
+  margin-bottom: 3em;
+  color: white;
+  width: 10em;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline 4px #E9BCB7;
+}
+
+
+.nav a {
+  text-decoration: underline 4px #E9BCB7;
+  font-weight: 700;
+}
