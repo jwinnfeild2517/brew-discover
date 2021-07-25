@@ -14,3 +14,24 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
+### HomePage
+
+- Featured Brewery
+- Grid of Browseable Brewery cards
+
+### Detail Pages
+
+- Contains brew info
+- Related Breweries based on brewery type and location
+
+### Seach page
+
+- searchable input form with browseable result cards
+
+### Styling
+
+- Mobile First design
+
+
+
