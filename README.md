@@ -32,6 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Styling
 
 - Mobile First design
+- Browseable grid follows a the 2 up, 2-up, 3-up design pattern
 
 
 
