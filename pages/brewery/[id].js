@@ -4,9 +4,7 @@ import useSWR from "swr"
 import { API, fetcher,  } from '../../components/GetBrew'
 import Layout from '../../components/Layout'
 
-
 const BrewDetail = () => {
-
   const router = useRouter()
 
   const {id} = router.query
@@ -39,6 +37,5 @@ const BrewDetail = () => {
     </Layout>
   )
 }
-
 
 export default BrewDetail;
