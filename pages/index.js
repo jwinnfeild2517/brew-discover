@@ -5,14 +5,24 @@ import Layout from '../components/Layout'
 import BreweryList from '../components/BreweryList'
 import FeaturedBrewery from '../components/FeaturedBrewery'
 
-const Home = () => {
+const Home = (props) => {
 
-  const [brewType, setType] = useState('micro')
-  const {data: brewData} = useSWR(`${API}?by_type=${brewType}`, fetcher);
+  const [brewType, setType] = useState('')
+  const {data: brewData} = useSWR(`${API}?by_type=${brewType}`, fetcher, { initialData: props.brews });
 
   const changeBrewType = (e) => {
     setType(e.target.value)
   }
+
+  const types = [
+    'Nano',
+    'Regional',
+    'Large',
+    'Planning',
+    'Bar',
+    'Contract',
+    'Closed',
+  ];
 
   if (!brewData) return <p>Loading...</p>
   return (
@@ -20,21 +30,26 @@ const Home = () => {
       <div className="filter">
         <label htmlFor="dropdown">Brewery Type:</label>
         <select id="dropdown" value={brewType} onChange={changeBrewType}>
-            <option defaultValue value="micro">Micro</option>
-            <option value="nano">Nano</option>
-            <option value="regional">Regional</option>
-            <option value="brewpub">BrewPub</option>
-            <option value="large">Large</option>
-            <option value="planning">Planning</option>
-            <option value="bar">Bar</option>
-            <option value="contract">Contract</option>
-            <option value="closed">Closed</option>
+            <option defaultValue value="Micro">Micro</option>
+            {
+              types.map(type => <option value={`${type}`}>{`${type}`}</option>)
+            }
           </select>
       </div>
       <FeaturedBrewery />
       <BreweryList data={brewData}/>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const brews = await fetcher(`${API}`)
+  // console.log(brewData);
+  return {
+    props: {
+      brews
+    }
+  }
 }
 
 export default Home
