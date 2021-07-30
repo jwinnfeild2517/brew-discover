@@ -1,7 +1,8 @@
+import React from "react";
 import useSWR from "swr"
 import { API, fetcher,  } from '../components/GetBrew'
 
-const FeaturedBrewery = () => {
+const FeaturedBrewery = React.memo(() => {
 
   let {data: brew} = useSWR(`${API}?by_state=georgia&per_page=1`, fetcher);
 
@@ -18,6 +19,6 @@ const FeaturedBrewery = () => {
         </ul>
     </div>
   )
-}
+})
 
 export default FeaturedBrewery
