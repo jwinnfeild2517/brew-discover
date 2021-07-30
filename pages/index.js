@@ -32,7 +32,7 @@ const Home = (props) => {
         <select id="dropdown" value={brewType} onChange={changeBrewType}>
             <option defaultValue value="Micro">Micro</option>
             {
-              types.map(type => <option value={`${type}`}>{`${type}`}</option>)
+              types.map(type => <option key={`${type} option`} value={`${type}`}>{`${type}`}</option>)
             }
           </select>
       </div>
